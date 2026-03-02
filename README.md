@@ -153,7 +153,11 @@ appsettings.json
 Run migrations:
 
 dotnet ef database update
+
+
+
 📸 Key Functional Flow
+
 
 Select Customer
 
@@ -175,7 +179,10 @@ API error handling
 
 User-friendly messages
 
+
+
 🎯 Learning Outcomes
+
 
 This project demonstrates:
 
@@ -191,15 +198,9 @@ Real-world inventory logic
 
 Clean project structure
 
+
+
 🚧 Future Improvements
-
-JWT Authentication & Role-based access
-
-Admin dashboard
-
-Order history & reports
-
-Export to PDF/Excel
 
 Docker deployment
 
