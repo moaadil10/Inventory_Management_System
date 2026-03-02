@@ -119,6 +119,7 @@ inventory-system/
 1️⃣ Clone Repository
 git clone [https://github.com/your-username/Inventory-system](https://github.com/moaadil10/Inventory-system).git
 cd Restaurant-Inventory
+
 2️⃣ Setup Backend (ASP.NET Core API)
 cd BackendAPI
 dotnet restore
@@ -126,6 +127,7 @@ dotnet run
 
 ✔ API runs at:
 https://localhost:5001 or http://localhost:5000
+
 
 3️⃣ Setup Frontend (Angular)
 cd UI
