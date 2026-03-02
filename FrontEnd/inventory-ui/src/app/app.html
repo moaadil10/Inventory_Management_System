@@ -1,0 +1,64 @@
+<nav *ngIf="auth.isLoggedIn()" class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm px-4">
+
+  <!-- Brand -->
+  <a class="navbar-brand fw-bold" routerLink="/dashboard">📦 Inventory</a>
+
+  <!-- Mobile toggle -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Menu -->
+  <div class="collapse navbar-collapse" id="navMenu">
+
+    <!-- Left Links -->
+    <ul class="navbar-nav me-auto">
+
+      <!-- Admin -->
+      <li class="nav-item" *ngIf="auth.isAdmin()">
+        <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      </li>
+
+      <li class="nav-item" *ngIf="auth.isAdmin()">
+        <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/customers" routerLinkActive="active">Customers</a>
+      </li>
+
+      <!-- All users -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/invoice" routerLinkActive="active">Invoice</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/history" routerLinkActive="active">History</a>
+      </li>
+
+      <!-- Admin -->
+      <li class="nav-item" *ngIf="auth.isAdmin()">
+        <a class="nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+      </li>
+
+    </ul>
+
+    <!-- Right Side Actions -->
+    <div class="d-flex align-items-center gap-2">
+
+      <button class="btn btn-outline-light btn-sm" (click)="toggleTheme()">
+        🌙 Dark Mode
+      </button>
+
+      <button class="btn btn-danger btn-sm" (click)="logout()">
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+</nav>
+
+<div class="container-fluid mt-4">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,136 @@
+<div class="container-fluid mt-4">
+
+  <!-- Page Title -->
+  <h2 class="mb-4">🧾 Create Invoice</h2>
+
+  <!-- Customer Selection Card -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <label class="form-label fw-semibold">Customer</label>
+      <select class="form-select" [(ngModel)]="selectedCustomerId">
+        <option [ngValue]="0">Select Customer</option>
+        <option *ngFor="let c of customers" [ngValue]="c.id">
+          {{ c.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Invoice Items Card -->
+  <div class="card shadow-sm">
+
+    <div class="card-header bg-dark text-white">
+      Invoice Items
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+
+        <thead class="table-light">
+          <tr>
+            <th>Product</th>
+            <th width="110">Qty</th>
+            <th width="140">Price</th>
+            <th width="140">Total</th>
+            <th width="80"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of items; let i = index">
+
+            <!-- Product -->
+            <td>
+              <select class="form-select"
+                      [(ngModel)]="item.productId"
+                      (change)="updateRow(item)">
+                <option [ngValue]="0">Select</option>
+                <option *ngFor="let p of products" [ngValue]="p.id">
+                  {{ p.name }}
+                </option>
+              </select>
+            </td>
+
+            <!-- Quantity -->
+            <td>
+              <input type="number"
+                     class="form-control"
+                     [(ngModel)]="item.quantity"
+                     (input)="updateRow(item)">
+            </td>
+
+            <!-- Price -->
+            <td class="fw-semibold text-muted">
+              ₹{{ item.price }}
+            </td>
+
+            <!-- Total -->
+            <td class="fw-bold text-primary">
+              ₹{{ item.total }}
+            </td>
+
+            <!-- Remove -->
+            <td>
+              <button type="button"
+                      class="btn btn-sm btn-outline-danger"
+                      (click)="removeRow(i)">
+                ✕
+              </button>
+            </td>
+
+          </tr>
+
+          <!-- Empty State -->
+          <tr *ngIf="items.length === 0">
+            <td colspan="5" class="text-center text-muted py-3">
+              No products added yet
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="card-body">
+
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+        <!-- Add Product -->
+        <button type="button"
+                class="btn btn-outline-primary"
+                (click)="addRow()">
+          ➕ Add Product
+        </button>
+
+        <!-- Grand Total -->
+        <h4 class="mb-0">
+          Grand Total:
+          <span class="text-success fw-bold">
+            ₹{{ grandTotal }}
+          </span>
+        </h4>
+
+        <!-- Save -->
+        <button type="button"
+                class="btn btn-success btn-lg"
+                (click)="saveInvoice()">
+          💾 Save Invoice
+        </button>
+
+      </div>
+
+      <!-- Messages -->
+      <p *ngIf="successMessage" class="text-success mt-3">
+        {{ successMessage }}
+      </p>
+
+      <p *ngIf="errorMessage" class="text-danger mt-3">
+        {{ errorMessage }}
+      </p>
+
+    </div>
+
+  </div>
+</div>

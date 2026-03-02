@@ -1,0 +1,24 @@
+<hr>
+
+<div class="row">
+  <div class="col-md-4">
+    <canvas id="revenueChart"></canvas>
+  </div>
+
+  <div class="col-md-4">
+    <canvas id="invoiceChart"></canvas>
+  </div>
+
+  <div class="col-md-4">
+    <canvas id="lowStockChart"></canvas>
+  </div>
+</div>
+
+<div *ngIf="stats.lowStock?.length" class="alert alert-warning mt-3">
+  <b>Low Stock Alerts:</b>
+  <ul>
+    <li *ngFor="let item of stats.lowStock">
+      {{ item.name }} — only {{ item.stock }} left
+    </li>
+  </ul>
+</div>

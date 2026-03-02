@@ -1,0 +1,123 @@
+<div class="container mt-4">
+  <h2 class="fw-bold mb-3">Invoice History</h2>
+
+  <!-- 🔍 SEARCH + FILTERS -->
+  <div class="row mb-3 g-2">
+    <div class="col-md-4">
+      <input class="form-control" placeholder="🔍 Search customer or product" [(ngModel)]="searchText"
+        (input)="applyFilters()">
+    </div>
+
+    <div class="col-md-3">
+      <input type="date" class="form-control" [(ngModel)]="selectedDate" (change)="applyFilters()">
+    </div>
+
+    <div class="col-md-3 d-flex align-items-center">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" [(ngModel)]="showCancelled" (change)="applyFilters()">
+        <label class="form-check-label">
+          Show Cancelled
+        </label>
+      </div>
+    </div>
+
+    <!-- Export CSV -->
+    <div class="col-md-2 text-end">
+      <button class="btn btn-success w-100" (click)="exportCSV()">
+        ⬇ Export CSV
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <p *ngIf="loading" class="text-muted">Loading invoices...</p>
+
+  <!-- Table -->
+  <div class="table-responsive" *ngIf="!loading && paginatedInvoices.length > 0">
+    <table class="table table-hover table-bordered align-middle shadow-sm">
+
+      <thead class="table-dark text-center">
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>Customer</th>
+          <th>Items</th>
+          <th>Total</th>
+          <th>Status</th>
+          <th width="260">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let inv of paginatedInvoices; let i = index" [class.table-danger]="inv.isCancelled">
+
+          <td class="text-center">{{ i + 1 }}</td>
+          <td>{{ inv.date | date:'short' }}</td>
+          <td class="fw-semibold">{{ inv.customerName }}</td>
+
+          <!-- Items -->
+          <td>
+            <div *ngIf="inv.items?.length; else noItems">
+              <div *ngFor="let item of inv.items">
+                • {{ item.productName }}
+                <span class="text-muted">(x{{ item.quantity }})</span>
+              </div>
+            </div>
+            <ng-template #noItems>
+              <span class="text-muted">No items</span>
+            </ng-template>
+          </td>
+
+          <!-- Total -->
+          <td class="fw-bold text-success">₹{{ inv.total }}</td>
+
+          <!-- Status -->
+          <td class="text-center">
+            <span *ngIf="!inv.isCancelled" class="badge bg-success">
+              Active
+            </span>
+            <span *ngIf="inv.isCancelled" class="badge bg-danger">
+              Cancelled
+            </span>
+          </td>
+
+          <!-- Actions -->
+          <td class="text-center">
+            <div class="actions-wrapper">
+
+              <button class="btn btn-outline-primary btn-sm action-btn" title="Print" (click)="printInvoice(inv)">
+                🖨
+              </button>
+
+              <button class="btn btn-outline-danger btn-sm action-btn" title="Export PDF" (click)="exportPDF(inv)">
+                📄 PDF
+              </button>
+
+              <button class="btn btn-outline-warning btn-sm action-btn" title="Email Invoice"
+                (click)="emailInvoice(inv)">
+                ✉ Email
+              </button>
+
+              <button class="btn btn-outline-dark btn-sm action-btn cancel-btn" *ngIf="!inv.isCancelled"
+                (click)="cancelInvoice(inv.id)">
+                ❌
+              </button>
+
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Empty -->
+  <p *ngIf="!loading && paginatedInvoices.length === 0" class="text-warning text-center mt-3">
+    No invoices found.
+  </p>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-center mt-3">
+    <button class="btn btn-secondary me-2" (click)="prevPage()">⬅ Prev</button>
+    <button class="btn btn-secondary" (click)="nextPage()">Next ➡</button>
+  </div>
+</div>

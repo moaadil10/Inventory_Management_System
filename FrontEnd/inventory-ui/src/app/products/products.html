@@ -1,0 +1,127 @@
+<div class="container-fluid">
+
+  <!-- Page Title -->
+  <h2 class="mb-4">📦 Products</h2>
+
+  <!-- Add Product Card -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      Add Product
+    </div>
+
+    <div class="card-body">
+      <div class="row g-3 align-items-end">
+
+        <div class="col-md-4">
+          <label class="form-label">Product Name</label>
+          <input class="form-control"
+                 [(ngModel)]="name"
+                 placeholder="Enter name">
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label">Price</label>
+          <input type="number"
+                 class="form-control"
+                 [(ngModel)]="price">
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label">Stock</label>
+          <input type="number"
+                 class="form-control"
+                 [(ngModel)]="stock">
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-success w-100" (click)="addProduct()">
+            ➕ Add
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Products Table -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-dark text-white">
+      Product List
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover table-striped mb-0">
+
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th width="150">Price</th>
+            <th width="120">Stock</th>
+            <th width="180">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let p of products">
+
+            <!-- EDIT MODE -->
+            <ng-container *ngIf="editingProductId === p.id; else viewMode">
+
+              <td>
+                <input class="form-control" [(ngModel)]="p.name">
+              </td>
+
+              <td>
+                <input type="number" class="form-control" [(ngModel)]="p.price">
+              </td>
+
+              <td>
+                <input type="number" class="form-control" [(ngModel)]="p.stock">
+              </td>
+
+              <td>
+                <button class="btn btn-sm btn-success me-2"
+                        (click)="updateProduct(p)">
+                  ✔ Save
+                </button>
+
+                <button class="btn btn-sm btn-secondary"
+                        (click)="editingProductId = null">
+                  Cancel
+                </button>
+              </td>
+
+            </ng-container>
+
+            <!-- VIEW MODE -->
+            <ng-template #viewMode>
+              <td>{{ p.name }}</td>
+              <td>₹{{ p.price }}</td>
+              <td>
+                <span class="badge"
+                      [ngClass]="p.stock === 0 ? 'bg-danger' : 'bg-success'">
+                  {{ p.stock }}
+                </span>
+              </td>
+
+              <td>
+                <button class="btn btn-sm btn-warning me-2"
+                        (click)="editProduct(p)">
+                  ✏ Edit
+                </button>
+
+                <button class="btn btn-sm btn-danger"
+                        (click)="deleteProduct(p.id!)">
+                  🗑 Delete
+                </button>
+              </td>
+            </ng-template>
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</div>

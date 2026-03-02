@@ -1,0 +1,18 @@
+.card {
+  border-radius: 12px;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.btn-outline-primary,
+.btn-outline-danger,
+.btn-outline-warning {
+  border-radius: 6px;
+}
+
+.small {
+  line-height: 1.3;
+}

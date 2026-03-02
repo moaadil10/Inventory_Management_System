@@ -1,0 +1,26 @@
+<div class="container mt-5" style="max-width: 400px;">
+  <div class="card shadow">
+    <div class="card-body">
+      <h3 class="text-center mb-3">Login</h3>
+
+      <input class="form-control mb-3"
+             placeholder="Username"
+             [(ngModel)]="username">
+
+      <input type="password"
+             class="form-control mb-3"
+             placeholder="Password"
+             [(ngModel)]="password">
+
+      <button type="button"
+              class="btn btn-primary w-100"
+              (click)="login()">
+        Login
+      </button>
+
+      <p class="text-danger text-center mt-2" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </p>
+    </div>
+  </div>
+</div>

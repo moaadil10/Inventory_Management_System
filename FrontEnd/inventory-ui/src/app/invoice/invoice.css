@@ -1,0 +1,19 @@
+.card {
+  border-radius: 12px;
+}
+
+.card-header {
+  font-weight: 600;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+.btn-lg {
+  padding: 10px 22px;
+}
+
+.text-primary {
+  font-size: 1.05rem;
+}

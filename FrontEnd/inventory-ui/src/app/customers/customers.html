@@ -1,0 +1,109 @@
+<div class="container-fluid">
+
+  <!-- Page Title -->
+  <h2 class="mb-4">👥 Customers</h2>
+
+  <!-- Add Customer Card -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      Add Customer
+    </div>
+
+    <div class="card-body">
+      <div class="row g-3 align-items-end">
+
+        <div class="col-md-5">
+          <label class="form-label">Customer Name</label>
+          <input class="form-control"
+                 [(ngModel)]="name"
+                 placeholder="Enter name">
+        </div>
+
+        <div class="col-md-5">
+          <label class="form-label">Phone</label>
+          <input class="form-control"
+                 [(ngModel)]="phone"
+                 placeholder="Enter phone number">
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-success w-100" (click)="addCustomer()">
+            ➕ Add
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer Table -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-dark text-white">
+      Customer List
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover table-striped mb-0">
+
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th width="200">Phone</th>
+            <th width="200">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let c of customers">
+
+            <!-- EDIT MODE -->
+            <ng-container *ngIf="editingCustomerId === c.id; else viewMode">
+
+              <td>
+                <input class="form-control" [(ngModel)]="c.name">
+              </td>
+
+              <td>
+                <input class="form-control" [(ngModel)]="c.phone">
+              </td>
+
+              <td>
+                <button class="btn btn-sm btn-success me-2"
+                        (click)="updateCustomer(c)">
+                  ✔ Save
+                </button>
+
+                <button class="btn btn-sm btn-secondary"
+                        (click)="editingCustomerId = null">
+                  Cancel
+                </button>
+              </td>
+
+            </ng-container>
+
+            <!-- VIEW MODE -->
+            <ng-template #viewMode>
+              <td>{{ c.name }}</td>
+              <td>{{ c.phone }}</td>
+
+              <td>
+                <button class="btn btn-sm btn-warning me-2"
+                        (click)="editCustomer(c)">
+                  ✏ Edit
+                </button>
+
+                <button class="btn btn-sm btn-danger"
+                        (click)="deleteCustomer(c.id!)">
+                  🗑 Delete
+                </button>
+              </td>
+            </ng-template>
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</div>
