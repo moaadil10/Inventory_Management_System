@@ -118,7 +118,7 @@ inventory-system/
 ⚙️ How to Run the Project
 1️⃣ Clone Repository
 git clone [https://github.com/your-username/Inventory-system](https://github.com/moaadil10/Inventory-system).git
-cd Restaurant-Inventory
+cd Inventory-system
 
 2️⃣ Setup Backend (ASP.NET Core API)
 cd BackendAPI
@@ -147,7 +147,7 @@ Update connection string in:
 appsettings.json
 
 "ConnectionStrings": {
-  "DefaultConnection": "server=localhost;database=RestaurantInventory;user=root;password=yourpassword"
+  "DefaultConnection": "server=localhost;database=InventoryDB;user=root;password=yourpassword"
 }
 
 Run migrations:
