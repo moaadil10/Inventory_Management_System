@@ -115,7 +115,7 @@ inventory-system/
 
 ---
 
-⚙️ How to Run the Project
+# ⚙️ How to Run the Project
 1️⃣ Clone Repository
 git clone [https://github.com/your-username/Inventory-system](https://github.com/moaadil10/Inventory-system).git
 <br>
