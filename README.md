@@ -118,8 +118,10 @@ inventory-system/
 ⚙️ How to Run the Project
 1️⃣ Clone Repository
 git clone [https://github.com/your-username/Inventory-system](https://github.com/moaadil10/Inventory-system).git
+<br>
 cd Inventory-system
 
+<br>
 2️⃣ Setup Backend (ASP.NET Core API)
 cd BackendAPI
 dotnet restore
