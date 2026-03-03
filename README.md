@@ -158,7 +158,7 @@ dotnet ef database update
 
 
 
-📸 Key Functional Flow
+# 📸 Key Functional Flow
 
 
 Select Customer
@@ -183,7 +183,7 @@ User-friendly messages
 
 
 
-🎯 Learning Outcomes
+# 🎯 Learning Outcomes
 
 
 This project demonstrates:
@@ -209,17 +209,17 @@ Docker deployment
 Azure hosting
 
 <p float="left">
-<img width="600" alt="Login" src="https://github.com/user-attachments/assets/d52b8e79-c631-4305-97f8-18969527754d" />
-<img width="600" alt="Products" src="https://github.com/user-attachments/assets/ea92e381-aa1f-47ea-9b4c-ed32e51f081d" />
-<img width="600" alt="Customers" src="https://github.com/user-attachments/assets/e04ecc83-a10c-4dd1-a480-ad177d17df59" />
-<img width="600" alt="Create Invoice" src="https://github.com/user-attachments/assets/c9ac39c1-1d00-4c3c-9bb7-c3797182caee" />
-<img width="600" alt="Invoice History" src="https://github.com/user-attachments/assets/b62e5167-8517-45d1-93f7-71f9e0d1080e" />
-<img width="600" alt="Admin User Management" src="https://github.com/user-attachments/assets/1445e932-5f2d-4b5a-a394-ec00906d04ec" />
-<img width="600" alt="Users Create Invoice" src="https://github.com/user-attachments/assets/f2a43568-0b29-411e-963a-4270ec424b68" />
-<img width="600" alt="Users Customer Page" src="https://github.com/user-attachments/assets/9c4336d2-735e-4563-b74d-89c54a32fa78" />
-<img width="600" alt="Users Invoice History" src="https://github.com/user-attachments/assets/afceeea0-36f1-4179-87de-ce7f6e873c97" />
-<img width="600" alt="Dark Mode" src="https://github.com/user-attachments/assets/66ec8494-bc82-49e2-a513-e9a52722c0c4" />
-<img width="600" alt="Dark Dashboard" src="https://github.com/user-attachments/assets/ce58c0ca-e765-4e4f-a8c1-09a297e6a10c" />
+<img width="500" alt="Login" src="https://github.com/user-attachments/assets/d52b8e79-c631-4305-97f8-18969527754d" />
+<img width="500" alt="Products" src="https://github.com/user-attachments/assets/ea92e381-aa1f-47ea-9b4c-ed32e51f081d" />
+<img width="500" alt="Customers" src="https://github.com/user-attachments/assets/e04ecc83-a10c-4dd1-a480-ad177d17df59" />
+<img width="500" alt="Create Invoice" src="https://github.com/user-attachments/assets/c9ac39c1-1d00-4c3c-9bb7-c3797182caee" />
+<img width="500" alt="Invoice History" src="https://github.com/user-attachments/assets/b62e5167-8517-45d1-93f7-71f9e0d1080e" />
+<img width="500" alt="Admin User Management" src="https://github.com/user-attachments/assets/1445e932-5f2d-4b5a-a394-ec00906d04ec" />
+<img width="500" alt="Users Create Invoice" src="https://github.com/user-attachments/assets/f2a43568-0b29-411e-963a-4270ec424b68" />
+<img width="500" alt="Users Customer Page" src="https://github.com/user-attachments/assets/9c4336d2-735e-4563-b74d-89c54a32fa78" />
+<img width="500" alt="Users Invoice History" src="https://github.com/user-attachments/assets/afceeea0-36f1-4179-87de-ce7f6e873c97" />
+<img width="500" alt="Dark Mode" src="https://github.com/user-attachments/assets/66ec8494-bc82-49e2-a513-e9a52722c0c4" />
+<img width="500" alt="Dark Dashboard" src="https://github.com/user-attachments/assets/ce58c0ca-e765-4e4f-a8c1-09a297e6a10c" />
 </p>
 
 
