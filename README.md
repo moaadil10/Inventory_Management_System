@@ -206,8 +206,21 @@ Docker deployment
 
 Azure hosting
 
+<p float="left">
+<img width="400" alt="Login" src="https://github.com/user-attachments/assets/ed417d3b-8a28-420d-920d-d1f8185dba52" />
+<img width="400" alt="Dashboard" src="https://github.com/user-attachments/assets/fdde2f39-3c39-4cd5-80e0-24a9173a7a80" />
+<img width="400" alt="Products" src="https://github.com/user-attachments/assets/a71fdca0-a639-42fb-8a4e-056a11b0e010" />
+<img width="400" alt="Customers" src="https://github.com/user-attachments/assets/b8e7cea6-7142-4950-b530-60dc1f5dbd80" />
+<img width="400" alt="Create Invoice" src="https://github.com/user-attachments/assets/4395dd9a-f8da-4249-9c19-e484836ac687" />
+<img width="400" alt="Invoice History" src="https://github.com/user-attachments/assets/5add1d2b-82a7-4935-b384-3f1346597421" />
+<img width="400" alt="Admin User Management" src="https://github.com/user-attachments/assets/14d855cf-7e32-4606-9e88-0c34f8782fd8" />
+<img width="400" alt="Users Create Invoice" src="https://github.com/user-attachments/assets/ba5fc435-a8bd-4b32-8ed6-a5b8464938aa" />
+<img width="400" alt="Users Customer Page" src="https://github.com/user-attachments/assets/bfd50080-82eb-4a7d-8d2c-935e668c5eba" />
+<img width="400" alt="Users Invoice History" src="https://github.com/user-attachments/assets/317ff2a5-279f-4c15-b814-78791f83c1b0" />
+<img width="400" alt="Dark Mode" src="https://github.com/user-attachments/assets/a29d6658-e2da-44ea-84fc-0ac0c3862a3b" />
+</p>
 
-<img width="1910" height="901" alt="Users Invoice History" src="https://github.com/user-attachments/assets/dc279540-269a-4daa-ad11-ea9eb8f68524" />
+
 
 👨‍💻 Author
 
